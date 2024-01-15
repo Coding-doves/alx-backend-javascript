@@ -1,9 +1,9 @@
-function handleResponseFromAPI(promise) {
+const function handleResponseFromAPI(promise) {
   return promise
-    .then(() => {
+    .then(() => ({
         status: 200,
         body: 'success'
-    })
+    }))
     .catch(() => {
         new Error();
     });
