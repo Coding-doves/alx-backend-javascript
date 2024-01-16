@@ -13,13 +13,17 @@ export default class Pricing {
   set amount(newAmount) {
     this._amount = newAmount;
   }
-  
+
   get currency() {
     return this._currency;
   }
 
   set currency(newCurrency) {
-    this._currency = newCurrency;
+    if (newCurrency instanceof Currency) {
+      this._currency = newCurrency;
+    } else {
+      throw new TypeError('instance of Currency class is needed');
+    }
   }
 
   displayFullPrice() {
