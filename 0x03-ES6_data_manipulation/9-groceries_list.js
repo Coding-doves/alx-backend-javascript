@@ -1,5 +1,5 @@
 export default function groceriesList() {
-  let groceries = [
+  const groceries = [
     ['Apples', 10],
     ['Tomatoes', 10],
     ['Pasta', 1],
