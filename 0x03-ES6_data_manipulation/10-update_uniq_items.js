@@ -3,11 +3,9 @@ function updateUniqueItems(inputMap) {
     throw new Error('Cannot process');
   }
 
-  const updatedMap = new Map();
-
   inputMap.forEach((quantity, item) => {
-    updatedMap.set(item, quantity === 1 ? 100 : quantity);
+    inputMap.set(item, quantity === 1 ? 100 : quantity);
   });
 
-  return updatedMap;
+  return inputMap;
 }
