@@ -1,4 +1,4 @@
-function updateUniqueItems(inputMap) {
+export default function updateUniqueItems(inputMap) {
   if (!(inputMap instanceof Map)) {
     throw new Error('Cannot process');
   }
