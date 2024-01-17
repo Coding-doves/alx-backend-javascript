@@ -4,7 +4,7 @@ export default function cleanSet(inputSet, startString) {
   }
   const filteredValues = Array.from(inputSet)
     .filter((value) => value && value.startsWith(startString))
-    .map(value => value.replace(startString));
+    .map((value) => value.replace(startString, ''));
 
   return filteredValues.join('-');
 }
