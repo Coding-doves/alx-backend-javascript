@@ -3,6 +3,10 @@ export default class HolbertonCourse {
     this._setName(name);
     this._setLength(length);
     this._setStudents(students);
+
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
   // Getter and Setter for name
@@ -10,7 +14,7 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  _setName(name) {
+  set name(name) {
     if (typeof name === 'string') {
       this._name = name;
     } else {
@@ -23,7 +27,7 @@ export default class HolbertonCourse {
     return this._length;
   }
 
-  _setLength(length) {
+  set length(length) {
     if (typeof length === 'number') {
       this._length = length;
     } else {
@@ -36,7 +40,7 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  _setStudents(students) {
+  set students(students) {
     if (Array.isArray(students) && students.every((student) => typeof student === 'string')) {
       this._students = students;
     } else {
