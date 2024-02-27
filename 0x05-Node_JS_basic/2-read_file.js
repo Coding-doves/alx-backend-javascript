@@ -3,16 +3,14 @@ const fs = require('fs');
 const countStudents = ((path) => {
   try {
     const data = fs.readFileSync(path, 'utf8');
-    const lines = data.split('\n').filter(line => line.trim() !== '');
+    const lines = data.trim().split('\n').slice(1);
 
     const fieldCnt = {};
     const fields = {};
     let totStudent = 0;
 
-    for (let i = 1; i < lines.length; i += 1) {
-      const col = lines[i].split(',');
-      const fName = col[0];
-      const field = col[3];
+    for (const line of lines) {
+      const [fName, , , field] = line.split(',').map(item => item.trim());
 
       if (field in fieldCnt) {
         fieldCnt[field] += 1;
