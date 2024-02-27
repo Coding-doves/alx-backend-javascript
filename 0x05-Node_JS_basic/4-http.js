@@ -10,10 +10,8 @@ const port = 1245;
 //creatin the server
 const app = http.createServer((request, response) => {
   response.statusCode = 200;
-
   //set header
   response.setHeader('Content-Type', 'text/plain');
-
   // Response body
   response.end('Hello Holberton School!');
 });
