@@ -17,13 +17,13 @@ const countStudents = (path) => {
         const [fName, , , field] = line.split(',').map((item) => item.trim());
 
         if (field in fieldCnt) {
-          fieldCnt[field] + 1;
+          fieldCnt[field] += 1;
           fields[field].push(fName);
         } else {
           fieldCnt[field] = 1;
           fields[field] = [fName];
         }
-        totStudent + 1;
+        totStudent += 1;
       }
 
       console.log(`Number of students: ${totStudent}`);
