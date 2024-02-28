@@ -14,22 +14,22 @@ const countStudents = (path) => {
       let totStudent = 0;
 
       for (const line of lines) {
-        const [fName, , , field] = line.split(',').map(item => item.trim());
+        const [fName, , , field] = line.split(',').map((item) => item.trim());
 
         if (field in fieldCnt) {
-          fieldCnt[field]++;
+          fieldCnt[field] + 1;
           fields[field].push(fName);
         } else {
           fieldCnt[field] = 1;
-          fields[field] = [fName]
+          fields[field] = [fName];
         }
-        totStudent++;
+        totStudent + 1;
       }
 
       console.log(`Number of students: ${totStudent}`);
 
       for (const field in fieldCnt) {
-        if (fieldCnt.hasOwnProperty(field)) {
+        if (Object.hasOwnProperty(field)) {
           console.log(`Number of students in ${field}: ${fieldCnt[field]}. List: ${fields[field].join(',')}`);
         }
       }
