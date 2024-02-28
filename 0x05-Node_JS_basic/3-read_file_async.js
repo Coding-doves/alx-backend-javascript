@@ -29,7 +29,7 @@ const countStudents = (path) => {
       console.log(`Number of students: ${totStudent}`);
 
       for (const field in fieldCnt) {
-        if (Object.hasOwnProperty(field)) {
+        if (fieldCnt.hasOwnProperty(field)) {
           console.log(`Number of students in ${field}: ${fieldCnt[field]}. List: ${fields[field].join(',')}`);
         }
       }
