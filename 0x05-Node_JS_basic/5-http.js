@@ -1,14 +1,14 @@
-/** 
+/**
  * create an HTTP server
  */
 
 const http = require('http');
 const fs = require('fs');
 
-const hostname  = '127.0.0.1';
+const hostname = '127.0.0.1';
 const port = 1245;
 
-const countStudents = ((path) => {
+const countStudents = (path) => {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
@@ -16,7 +16,7 @@ const countStudents = ((path) => {
         return;
       }
 
-      const lines = data.split('\n').filter(line => line.trim() !== '');
+      const lines = data.split('\n').filter((line) => line.trim() !== '');
       const fieldCnt = {};
       const fields = {};
       let totStudent = 0;
@@ -32,7 +32,7 @@ const countStudents = ((path) => {
           fields[field].push(fName);
         } else {
           fieldCnt[field] = 1;
-          fields[field] = [fName]
+          fields[field] = [fName];
         }
         totStudent += 1;
       }
@@ -47,28 +47,28 @@ const countStudents = ((path) => {
       resolve(res);
     });
   });
-});
+};
 
-//creatin the server
+// creatin the server
 const app = http.createServer((request, response) => {
   if (request.url === '/') {
     response.statusCode = 200;
-    //set header
+    // set header
     response.setHeader('Content-Type', 'text/plain');
     // Response body
     response.end('Hello Holberton School!');
   } else if (request.url === '/students') {
     response.statusCode = 200;
-    //set header
+    // set header
     response.setHeader('Content-Type', 'text/plain');
     // Response body
     countStudents(process.argv[2])
-    .then((outpt) => {
-      response.end(`This is the list of our students\n${outpt}`);
-    })
-    .catch(() => {
-      response.statusCode = 404;
-      response.end('Cannot load the database');
+      .then((outpt) => {
+        response.end(`This is the list of our students\n${outpt}`);
+      })
+      .catch(() => {
+        response.statusCode = 404;
+        response.end('Cannot load the database');
     });
   } else {
     response.statusCode = 404;
