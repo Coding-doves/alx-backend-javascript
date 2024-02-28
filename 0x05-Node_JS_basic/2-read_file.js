@@ -10,21 +10,21 @@ const countStudents = ((path) => {
     let totStudent = 0;
 
     for (const line of lines) {
-      const [fName, , , field] = line.split(',').map(item => item.trim());
+      const [fName, , , field] = line.split(',').map((item) => item.trim());
 
       if (field in fieldCnt) {
         fieldCnt[field] += 1;
         fields[field].push(fName);
       } else {
         fieldCnt[field] = 1;
-        fields[field] = [fName]
+        fields[field] = [fName];
       }
       totStudent += 1;
     }
 
     console.log(`Number of students: ${totStudent}`);
 
-    for (field in fieldCnt) {
+    for (const field in fieldCnt) {
       if (field) {
         console.log(`Number of students in ${field}: ${fieldCnt[field]}. List: ${fields[field].join(',')}`);
       }
