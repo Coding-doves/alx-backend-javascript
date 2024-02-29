@@ -4,7 +4,7 @@ const calculateNumber = require("./2-calcul_chai");
 
 describe("calculateNumber", function() {
   describe("SUM", function() {
-	  it("sum and return number", function() {
+    it("sum and return number", function() {
 	    expect(calculateNumber("SUM", 1, 2)).to.equal(3);
 	  });
 	  it("sum and return number", function() {
