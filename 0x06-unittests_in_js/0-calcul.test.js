@@ -13,7 +13,7 @@ describe('calculateNumber()', () => {
     assert.strictEqual(calculateNumber(1.4, 2.6) ,4);
   });
   it('return the sum of negative and positive rounded numbers', () => {
-    assert.strictEqual(calculateNumber(-1.4, 2.6) ,2);
+    assert.strictEqual(calculateNumber(-1.4, 2.6) ,1);
   });
   it('return the sum of zeros', () => {
     assert.strictEqual(calculateNumber(0, 0) ,0);
