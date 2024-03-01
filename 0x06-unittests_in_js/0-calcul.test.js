@@ -2,26 +2,23 @@ const assert = require("assert");
 const { it, describe } = require("mocha");
 const calculateNumber = require("./0-calcul");
 
-describe('calculateNumber()', () => {
-  it('return the sum of whole numbers', () => {
-    assert.strictEqual(calculateNumber(1, 2) ,3);
+describe("calculateNumber()", function() {
+  it(`sum and round numbers`, function() {
+    assert.strictEqual(calculateNumber(1, 2), 3);
   });
-  it('return the sum of whole negative numbers', () => {
-    assert.strictEqual(calculateNumber(-1, -2) ,-3);
+  it(`sum and round numbers`, function() {
+    assert.strictEqual(calculateNumber(1.4, 2.2), 3);
   });
-  it('return the sum of rounded numbers', () => {
-    assert.strictEqual(calculateNumber(1.4, 2.6) ,4);
+  it(`sum and round numbers`, function() {
+    assert.strictEqual(calculateNumber(1.6, 2.7), 5);
   });
-  it('return the sum of negative and positive rounded numbers', () => {
-    assert.strictEqual(calculateNumber(-1.4, 2.6) ,1);
+  it(`sum and round numbers`, function() {
+    assert.strictEqual(calculateNumber(0, 0), 0);
   });
-  it('return the sum of zeros', () => {
-    assert.strictEqual(calculateNumber(0, 0) ,0);
+  it(`sum and round numbers`, function() {
+    assert.strictEqual(calculateNumber(-1.6, -1.7), -4);
   });
-  it('return the sum of rounded numbers', () => {
-    assert.strictEqual(calculateNumber(-1.4, -2.6) ,-4);
-  });
-  it('return the sum of whole and rounded numbers', () => {
-    assert.strictEqual(calculateNumber(1, 3.6) ,5);
+  it(`sum and round numbers`, function() {
+	  assert.strictEqual(calculateNumber(-1.4, -1.3), -2);
   });
 });
